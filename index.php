@@ -34,7 +34,7 @@ if (!empty($_POST['qr'])) {
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form method="post" action="/index">
+                <form method="post" action="">
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Enter Text For Generate</label>
                         <input type="text" name="qr" class="form-control">
