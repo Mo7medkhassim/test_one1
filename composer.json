@@ -1,0 +1,17 @@
+{
+    "name": "mycomputer/test_one1",
+    "authors": [
+        {
+            "name": "Mohammed Alkhassim",
+            "email": "kassimsd350@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "MVC\\":"app"
+        }
+    },
+    "require": {
+        
+    }
+}

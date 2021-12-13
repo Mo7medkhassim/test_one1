@@ -1,4 +1,23 @@
+<?php
 
+if (!empty($_POST['qr'])) {
+    # code...
+    $qrText = $_POST['qr'];
+
+    // echo ($qrText);die;
+    // download and required the qrcode library
+    require_once 'phpqrcode/qrlib.php';
+    // to genearate image to use later
+    $path = "img/";
+    // generate uniqid for the file name
+    $file = $path . uniqid() . '.png';
+
+    $text = $qrText;
+    QRcode::png($text, $file, 'L', '10');
+
+    
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,20 +32,19 @@
 
 <body>
     <div class="container mt-5">
-        <h1>QR Code Generater</h1>
+        <a class="btn btn-danger" href="index.php">back</a>
+        <h1>QR Code Display</h1>
+
         <div class="row pt-5">
+           
             <div class="col-md-6">
-                <h3>Your informations</h3>
-                <form method="post" action="show.php">
-                    <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label">Enter Text For Generate</label>
-                        <input type="text" name="qr" require class="form-control">
-
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
+                
+                <div class="">
+                   <?php if(isset($file)) :  ?>
+                    <img src='<?= $file ?>'>
+                    <?php endif?>
+                </div>
             </div>
-
         </div>
     </div>
 
